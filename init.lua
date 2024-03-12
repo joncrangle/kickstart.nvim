@@ -726,6 +726,9 @@ require('lazy').setup({
           { name = 'luasnip' },
           { name = 'path' },
         },
+        formatting = {
+          format = require('tailwindcss-colorizer-cmp').formatter,
+        },
       }
     end,
   },
