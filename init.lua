@@ -91,7 +91,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -547,6 +547,15 @@ require('lazy').setup({
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {},
         astro = {},
+        svelte = {},
+        cssls = {},
+        html = {},
+        jsonls = {},
+        yamlls = {},
+        dockerls = {},
+        docker_compose_language_service = {},
+        marksman = {},
+        tailwindcss = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -623,6 +632,7 @@ require('lazy').setup({
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
         javascript = { { 'prettierd', 'prettier' } },
+        gopls = { 'gofmt' },
       },
     },
   },
@@ -793,6 +803,8 @@ require('lazy').setup({
         highlight = { enable = true },
         indent = { enable = true },
       }
+
+      require('nvim-treesitter.install').compilers = { 'zig' }
 
       -- There are additional nvim-treesitter modules that you can use to interact
       -- with nvim-treesitter. You should go explore a few and see what interests you:
