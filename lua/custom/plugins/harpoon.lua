@@ -30,58 +30,20 @@ return {
       vim.keymap.set('n', '<C-e>', function()
         toggle_telescope(harpoon:list())
       end, { desc = 'Open telescope Harpoon2 window' })
+
+      vim.keymap.set('n', '<C-a>', function()
+        harpoon.ui:toggle_quick_menu(harpoon:list())
+      end, { desc = 'Harpoon2 quick menu' })
+
+      vim.keymap.set('n', '<leader>a', function()
+        harpoon:list():append()
+      end, { desc = '[A]dd file to Harpoon2' })
+
+      for i = 1, 4 do
+        vim.keymap.set('n', '<leader>' .. i, function()
+          harpoon:list():select(i)
+        end, { desc = 'Harpoon to file ' .. i })
+      end
     end,
-    keys = {
-      {
-        '<leader>A',
-        function()
-          require('harpoon'):list():append()
-        end,
-        desc = '[A]dd file to Harpoon2',
-      },
-      {
-        '<leader>a',
-        function()
-          local harpoon = require 'harpoon'
-          harpoon.ui:toggle_quick_menu(harpoon:list())
-        end,
-        desc = 'Harpoon2 quick menu',
-      },
-      {
-        '<leader>1',
-        function()
-          require('harpoon'):list():select(1)
-        end,
-        desc = 'Harpoon to file 1',
-      },
-      {
-        '<leader>2',
-        function()
-          require('harpoon'):list():select(2)
-        end,
-        desc = 'Harpoon to file 2',
-      },
-      {
-        '<leader>3',
-        function()
-          require('harpoon'):list():select(3)
-        end,
-        desc = 'Harpoon to file 3',
-      },
-      {
-        '<leader>4',
-        function()
-          require('harpoon'):list():select(4)
-        end,
-        desc = 'Harpoon to file 4',
-      },
-      {
-        '<leader>5',
-        function()
-          require('harpoon'):list():select(5)
-        end,
-        desc = 'Harpoon to file 5',
-      },
-    },
   },
 }
