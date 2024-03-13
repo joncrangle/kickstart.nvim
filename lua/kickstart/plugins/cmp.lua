@@ -87,6 +87,7 @@ return {
           { name = 'nvim_lsp' },
           { name = 'luasnip' },
           { name = 'path' },
+          { name = 'emoji' },
         },
         formatting = {
           format = require('tailwindcss-colorizer-cmp').formatter,
