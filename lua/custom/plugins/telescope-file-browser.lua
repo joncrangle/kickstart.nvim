@@ -22,3 +22,4 @@ return {
     { '<C-f>', '<cmd>Telescope file_browser<cr>', desc = '[F]ile explorer' },
   },
 }
+-- vim: ts=2 sts=2 sw=2 et

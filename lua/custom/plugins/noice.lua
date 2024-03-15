@@ -1,11 +1,8 @@
 return {
   {
     'folke/noice.nvim',
-    opts = {
-      -- add any options here
-    },
+    opts = {},
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       'MunifTanjim/nui.nvim',
       -- OPTIONAL:
       --   `nvim-notify` is only needed, if you want to use the notification view.
@@ -14,3 +11,4 @@ return {
     },
   },
 }
+-- vim: ts=2 sts=2 sw=2 et

@@ -1,26 +1,22 @@
 return {
   {
     'debugloop/telescope-undo.nvim',
-    dependencies = { -- note how they're inverted to above example
+    dependencies = {
       {
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' },
       },
     },
     keys = {
-      { -- lazy style key map
+      {
         '<leader>u',
         '<cmd>Telescope undo<cr>',
         desc = '[U]ndo history',
       },
     },
     opts = {
-      -- don't use `defaults = { }` here, do this in the main telescope spec
       extensions = {
-        undo = {
-          -- telescope-undo.nvim config, see below
-        },
-        -- no other extensions here, they can have their own spec too
+        undo = {},
       },
     },
     config = function(_, opts)
@@ -32,3 +28,4 @@ return {
     end,
   },
 }
+-- vim: ts=2 sts=2 sw=2 et

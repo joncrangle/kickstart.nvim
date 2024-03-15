@@ -89,6 +89,7 @@ return {
           { name = 'path' },
           { name = 'emoji' },
         },
+        ---@diagnostic disable-next-line: missing-fields
         formatting = {
           format = require('tailwindcss-colorizer-cmp').formatter,
         },
