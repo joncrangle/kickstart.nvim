@@ -14,14 +14,26 @@ return {
         }
       end,
       formatters_by_ft = {
-        lua = { 'stylua' },
-        -- Conform can also run multiple formatters sequentially
-        python = { 'isort', 'black' },
-        --
+        bash = { 'shfmt' },
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
+        css = { { 'prettierd', 'prettier' } },
+        -- Conform can also run multiple formatters sequentially
+        go = { 'goimports', 'goimports-reviser', 'golines', 'gofmt' },
+        html = { { 'prettierd', 'prettier' } },
         javascript = { { 'prettierd', 'prettier' } },
-        gopls = { 'gofmt' },
+        javascriptreact = { { 'prettierd', 'prettier' } },
+        json = { { 'prettierd', 'prettier' } },
+        lua = { 'stylua' },
+        markdown = { 'markdownlint' },
+        python = { 'isort', 'black' },
+        sh = { 'shfmt' },
+        svelte = { { 'prettierd', 'prettier' } },
+        templ = { 'templ' },
+        typescript = { { 'prettierd', 'prettier' } },
+        typescriptreact = { { 'prettierd', 'prettier' } },
+        yaml = { 'yamlfmt' },
+        zig = { 'zigfmt' },
       },
     },
   },
