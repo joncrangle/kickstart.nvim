@@ -197,16 +197,13 @@ return {
         'black',
         'goimports',
         'goimports-reviser',
-        'golangci-lint',
         'golines',
-        'gomodifytags',
         'isort',
-        'jsonlint',
-        'markdownlint',
         'prettier',
         'prettierd',
+        'shfmt',
         'stylua',
-        'yamllint',
+        'templ',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
