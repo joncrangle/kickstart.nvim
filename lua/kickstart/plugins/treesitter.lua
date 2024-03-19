@@ -1,7 +1,9 @@
 return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
-    dependencies = { 'nvim-treesitter/nvim-treesitter-context' },
+    dependencies = {
+      { 'nvim-treesitter/nvim-treesitter-context', opts = { mode = 'cursor', max_lines = 3 } },
+    },
     build = ':TSUpdate',
     opts = {
       ensure_installed = { 'bash', 'c', 'go', 'html', 'javascript', 'lua', 'markdown', 'typescript', 'vim', 'vimdoc', 'yaml' },
@@ -30,6 +32,10 @@ return {
       --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
       --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
     end,
+  },
+  {
+    'windwp/nvim-ts-autotag',
+    opts = {},
   },
 }
 -- vim: ts=2 sts=2 sw=2 et
