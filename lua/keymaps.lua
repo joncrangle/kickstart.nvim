@@ -34,8 +34,7 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Switching and closing tab pages
-vim.keymap.set('n', '<C-j>', '<cmd>tabprevious<CR>', { desc = 'Previous tab page' })
-vim.keymap.set('n', '<C-k>', '<cmd>tabnext<CR>', { desc = 'Next tab page' })
+vim.keymap.set('n', '<C-1>', '<cmd>tabnext<CR>', { desc = 'Next tab page' })
 vim.keymap.set('n', '<C-q>', '<cmd>tabclose<CR>', { desc = 'Close tab page' })
 
 -- Replace current word
