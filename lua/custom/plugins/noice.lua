@@ -25,21 +25,21 @@ return {
         function()
           require('noice').cmd 'last'
         end,
-        desc = 'Last',
+        desc = '[N]oice [L]ast',
       },
       {
         '<leader>nh',
         function()
           require('noice').cmd 'history'
         end,
-        desc = 'History',
+        desc = '[N]oice [H]istory',
       },
       {
         '<leader>nd',
         function()
           require('noice').cmd 'dismiss'
         end,
-        desc = 'Dismiss all',
+        desc = '[N]oice [D]ismiss all',
       },
     },
   },
