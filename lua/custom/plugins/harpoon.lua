@@ -31,7 +31,7 @@ return {
         toggle_telescope(harpoon:list())
       end, { desc = 'Open telescope Harpoon2 window' })
 
-      vim.keymap.set('n', '<C-a>', function()
+      vim.keymap.set('n', '<leader>h', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
       end, { desc = 'Harpoon2 quick menu' })
 
@@ -39,7 +39,7 @@ return {
         harpoon:list():append()
       end, { desc = '[A]dd file to Harpoon2' })
 
-      for i = 1, 4 do
+      for i = 1, 9 do
         vim.keymap.set('n', '<leader>' .. i, function()
           harpoon:list():select(i)
         end, { desc = 'Harpoon to file ' .. i })
