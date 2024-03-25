@@ -5,9 +5,14 @@ return {
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = {
       options = {
-        disabled_filetypes = {
+        extensions = {
+          'lazy',
+          'mason',
           'neo-tree',
-          'Trouble',
+          'nvim-dap-ui',
+          'oil',
+          'quickfix',
+          'trouble',
         },
       },
     },
