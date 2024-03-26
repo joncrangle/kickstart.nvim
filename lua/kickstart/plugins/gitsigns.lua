@@ -43,6 +43,28 @@ return {
           end)
           return '<Ignore>'
         end, { expr = true, desc = 'Previous git hunk' })
+
+        -- Actions
+        map('n', '<leader>gs', gs.stage_hunk, { desc = '[G]it [S]tage hunk' })
+        map('n', '<leader>gr', gs.reset_hunk, { desc = '[G]it [R]eset hunk' })
+        map('v', '<leader>gs', function()
+          gs.stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
+        end)
+        map('v', '<leader>gr', function()
+          gs.reset_hunk { vim.fn.line '.', vim.fn.line 'v' }
+        end)
+        map('n', '<leader>gS', gs.stage_buffer, { desc = '[G]it [S]tage buffer' })
+        map('n', '<leader>gu', gs.undo_stage_hunk, { desc = '[G]it [U]ndo stage hunk' })
+        map('n', '<leader>gR', gs.reset_buffer, { desc = '[G]it [R]eset buffer' })
+        map('n', '<leader>gp', gs.preview_hunk, { desc = '[G]it [P]review hunk' })
+        map('n', '<leader>gb', function()
+          gs.blame_line { full = true }
+        end)
+        map('n', '<leader>gl', gs.toggle_current_line_blame, { desc = '[G]it [L]ine blame' })
+        map('n', '<leader>gt', gs.toggle_deleted, { desc = '[G]it [T]oggle deleted' })
+
+        -- Text object
+        map({ 'o', 'x' }, 'ih', ':<C-U>Gitsigns select_hunk<CR>', { desc = 'Select git hunk' })
       end,
     },
   },
