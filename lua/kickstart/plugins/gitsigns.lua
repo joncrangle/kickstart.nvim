@@ -59,7 +59,7 @@ return {
         map('n', '<leader>gp', gs.preview_hunk, { desc = '[G]it [P]review hunk' })
         map('n', '<leader>gb', function()
           gs.blame_line { full = true }
-        end)
+        end, { desc = '[G]it [B]lame preview' })
         map('n', '<leader>gl', gs.toggle_current_line_blame, { desc = '[G]it [L]ine blame' })
         map('n', '<leader>gt', gs.toggle_deleted, { desc = '[G]it [T]oggle deleted' })
 
