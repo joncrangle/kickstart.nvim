@@ -198,6 +198,7 @@ return {
         'goimports-reviser',
         'golines',
         'isort',
+        'markdownlint',
         'prettier',
         'prettierd',
         'shfmt',
