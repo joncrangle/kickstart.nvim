@@ -21,9 +21,10 @@ return {
           ['vim.lsp.util.stylize_markdown'] = true,
           ['cmp.entry.get_documentation'] = true,
         },
-        signature = { auto_open = false },
+        signature = { auto_open = { enabled = false } },
       },
       status = {
+        -- Statusline component for LSP progress notifications
         lsp_progress = { event = 'lsp', kind = 'progress' },
       },
       routes = {
@@ -41,6 +42,7 @@ return {
           },
           opts = { skip = true },
         },
+        -- Don't show lsp status messages in default view
         {
           filter = {
             event = 'lsp',
@@ -58,25 +60,33 @@ return {
     },
     keys = {
       {
-        '<leader>nl',
-        function()
-          require('noice').cmd 'last'
-        end,
-        desc = '[N]oice [L]ast',
+        '<leader>nt',
+        '<cmd>NoiceTelescope<cr>',
+        desc = '[N]oice [T]elescope',
       },
       {
-        '<leader>nh',
+        '<C-f>',
         function()
-          require('noice').cmd 'history'
+          if not require('noice.lsp').scroll(4) then
+            return '<C-f>'
+          end
         end,
-        desc = '[N]oice [H]istory',
+        silent = true,
+        expr = true,
+        desc = 'Scroll forward',
+        mode = { 'i', 'n', 's' },
       },
       {
-        '<leader>nd',
+        '<C-b>',
         function()
-          require('noice').cmd 'dismiss'
+          if not require('noice.lsp').scroll(-4) then
+            return '<C-b>'
+          end
         end,
-        desc = '[N]oice [D]ismiss all',
+        silent = true,
+        expr = true,
+        desc = 'Scroll backward',
+        mode = { 'i', 'n', 's' },
       },
     },
   },
