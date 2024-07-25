@@ -19,12 +19,41 @@ return {
         override = {
           ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
           ['vim.lsp.util.stylize_markdown'] = true,
-          ['cmp.entry.get_documentation'] = false,
+          ['cmp.entry.get_documentation'] = true,
+        },
+        signature = { auto_open = false },
+      },
+      status = {
+        lsp_progress = { event = 'lsp', kind = 'progress' },
+      },
+      routes = {
+        -- Ignore the typical vim change messages
+        {
+          filter = {
+            event = 'msg_show',
+            any = {
+              { find = '%d+L, %d+B' },
+              { find = '; after #%d+' },
+              { find = '; before #%d+' },
+              { find = '%d fewer lines' },
+              { find = '%d more lines' },
+            },
+          },
+          opts = { skip = true },
+        },
+        {
+          filter = {
+            event = 'lsp',
+            kind = 'progress',
+          },
+          opts = { skip = true },
         },
       },
       presets = {
         bottom_search = true,
         command_palette = true,
+        lsp_doc_border = true,
+        long_message_to_split = true,
       },
     },
     keys = {
