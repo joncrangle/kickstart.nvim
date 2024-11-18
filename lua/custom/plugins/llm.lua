@@ -1,6 +1,6 @@
 local function generate_vendor(port, model)
   return {
-    ['local'] = true,
+    api_key_name = '',
     endpoint = '127.0.0.1',
     model = model,
     parse_curl_args = function(opts, code_opts)
